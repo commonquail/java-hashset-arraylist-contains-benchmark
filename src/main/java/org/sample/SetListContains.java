@@ -17,9 +17,9 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@Fork(10)
-@Warmup(iterations = 20, time = 1, timeUnit = TimeUnit.SECONDS)
-@Measurement(iterations = 20, time = 1, timeUnit = TimeUnit.SECONDS)
+@Fork(1)
+@Warmup(iterations = 1, time = 100, timeUnit = TimeUnit.MILLISECONDS)
+@Measurement(iterations = 1, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
 public class SetListContains {
 
