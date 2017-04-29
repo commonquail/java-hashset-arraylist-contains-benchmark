@@ -36,6 +36,19 @@ public class SetListContains {
     private Ctx list_01000 = new Ctx(ArrayList::new, Object::new, 1000);
     private Ctx list_10000 = new Ctx(ArrayList::new, Object::new, 10000);
 
+    private Ctx list_string_00000 = new Ctx(ArrayList::new, SetListContains::stringFactory, 0);
+    private Ctx list_string_00001 = new Ctx(ArrayList::new, SetListContains::stringFactory, 1);
+    private Ctx list_string_00002 = new Ctx(ArrayList::new, SetListContains::stringFactory, 2);
+    private Ctx list_string_00003 = new Ctx(ArrayList::new, SetListContains::stringFactory, 3);
+    private Ctx list_string_00004 = new Ctx(ArrayList::new, SetListContains::stringFactory, 4);
+    private Ctx list_string_00005 = new Ctx(ArrayList::new, SetListContains::stringFactory, 5);
+    private Ctx list_string_00010 = new Ctx(ArrayList::new, SetListContains::stringFactory, 10);
+    private Ctx list_string_00020 = new Ctx(ArrayList::new, SetListContains::stringFactory, 20);
+    private Ctx list_string_00050 = new Ctx(ArrayList::new, SetListContains::stringFactory, 50);
+    private Ctx list_string_00100 = new Ctx(ArrayList::new, SetListContains::stringFactory, 100);
+    private Ctx list_string_01000 = new Ctx(ArrayList::new, SetListContains::stringFactory, 1000);
+    private Ctx list_string_10000 = new Ctx(ArrayList::new, SetListContains::stringFactory, 10000);
+
     private Ctx set_00000 = new Ctx(HashSet::new, Object::new, 0);
     private Ctx set_00001 = new Ctx(HashSet::new, Object::new, 1);
     private Ctx set_00002 = new Ctx(HashSet::new, Object::new, 2);
@@ -48,6 +61,19 @@ public class SetListContains {
     private Ctx set_00100 = new Ctx(HashSet::new, Object::new, 100);
     private Ctx set_01000 = new Ctx(HashSet::new, Object::new, 1000);
     private Ctx set_10000 = new Ctx(HashSet::new, Object::new, 10000);
+
+    private Ctx set_string_00000 = new Ctx(HashSet::new, SetListContains::stringFactory, 0);
+    private Ctx set_string_00001 = new Ctx(HashSet::new, SetListContains::stringFactory, 1);
+    private Ctx set_string_00002 = new Ctx(HashSet::new, SetListContains::stringFactory, 2);
+    private Ctx set_string_00003 = new Ctx(HashSet::new, SetListContains::stringFactory, 3);
+    private Ctx set_string_00004 = new Ctx(HashSet::new, SetListContains::stringFactory, 4);
+    private Ctx set_string_00005 = new Ctx(HashSet::new, SetListContains::stringFactory, 5);
+    private Ctx set_string_00010 = new Ctx(HashSet::new, SetListContains::stringFactory, 10);
+    private Ctx set_string_00020 = new Ctx(HashSet::new, SetListContains::stringFactory, 20);
+    private Ctx set_string_00050 = new Ctx(HashSet::new, SetListContains::stringFactory, 50);
+    private Ctx set_string_00100 = new Ctx(HashSet::new, SetListContains::stringFactory, 100);
+    private Ctx set_string_01000 = new Ctx(HashSet::new, SetListContains::stringFactory, 1000);
+    private Ctx set_string_10000 = new Ctx(HashSet::new, SetListContains::stringFactory, 10000);
 
     // :list-false:
 
@@ -388,6 +414,345 @@ public class SetListContains {
         return ctx.c.contains(o);
     }
 
+    // :list-string-false:
+
+    @Benchmark
+    public boolean arraylist_string_00000() {
+        final Ctx ctx = list_string_00000;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00001() {
+        final Ctx ctx = list_string_00001;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00002() {
+        final Ctx ctx = list_string_00002;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00003() {
+        final Ctx ctx = list_string_00003;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00004() {
+        final Ctx ctx = list_string_00004;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00005() {
+        final Ctx ctx = list_string_00005;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00010() {
+        final Ctx ctx = list_string_00010;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00020() {
+        final Ctx ctx = list_string_00020;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00050() {
+        final Ctx ctx = list_string_00050;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_00100() {
+        final Ctx ctx = list_string_00100;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_01000() {
+        final Ctx ctx = list_string_01000;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_10000() {
+        final Ctx ctx = list_string_10000;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    // :list-string-1st:
+
+    @Benchmark
+    public boolean arraylist_string_1st_00001() {
+        final Ctx ctx = list_string_00001;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_00002() {
+        final Ctx ctx = list_string_00002;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_00003() {
+        final Ctx ctx = list_string_00003;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_00004() {
+        final Ctx ctx = list_string_00004;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_00005() {
+        final Ctx ctx = list_string_00005;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_00010() {
+        final Ctx ctx = list_string_00010;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_00020() {
+        final Ctx ctx = list_string_00020;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_00050() {
+        final Ctx ctx = list_string_00050;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_00100() {
+        final Ctx ctx = list_string_00100;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_01000() {
+        final Ctx ctx = list_string_01000;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_1st_10000() {
+        final Ctx ctx = list_string_10000;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    // :list-string-25th:
+
+    @Benchmark
+    public boolean arraylist_string_25th_00004() {
+        final Ctx ctx = list_string_00004;
+        final Object o = ctx.q25;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_25th_00005() {
+        final Ctx ctx = list_string_00005;
+        final Object o = ctx.q25;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_25th_00010() {
+        final Ctx ctx = list_string_00010;
+        final Object o = ctx.q25;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_25th_00020() {
+        final Ctx ctx = list_string_00020;
+        final Object o = ctx.q25;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_25th_00050() {
+        final Ctx ctx = list_string_00050;
+        final Object o = ctx.q25;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_25th_00100() {
+        final Ctx ctx = list_string_00100;
+        final Object o = ctx.q25;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_25th_01000() {
+        final Ctx ctx = list_string_01000;
+        final Object o = ctx.q25;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_25th_10000() {
+        final Ctx ctx = list_string_10000;
+        final Object o = ctx.q25;
+        return ctx.c.contains(o);
+    }
+
+    // :list-string-50th:
+
+    @Benchmark
+    public boolean arraylist_string_50th_00004() {
+        final Ctx ctx = list_string_00004;
+        final Object o = ctx.q50;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_50th_00005() {
+        final Ctx ctx = list_string_00005;
+        final Object o = ctx.q50;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_50th_00010() {
+        final Ctx ctx = list_string_00010;
+        final Object o = ctx.q50;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_50th_00020() {
+        final Ctx ctx = list_string_00020;
+        final Object o = ctx.q50;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_50th_00050() {
+        final Ctx ctx = list_string_00050;
+        final Object o = ctx.q50;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_50th_00100() {
+        final Ctx ctx = list_string_00100;
+        final Object o = ctx.q50;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_50th_01000() {
+        final Ctx ctx = list_string_01000;
+        final Object o = ctx.q50;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_50th_10000() {
+        final Ctx ctx = list_string_10000;
+        final Object o = ctx.q50;
+        return ctx.c.contains(o);
+    }
+
+    // :list-string-75th:
+
+    @Benchmark
+    public boolean arraylist_string_75th_00004() {
+        final Ctx ctx = list_string_00004;
+        final Object o = ctx.q75;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_75th_00005() {
+        final Ctx ctx = list_string_00005;
+        final Object o = ctx.q75;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_75th_00010() {
+        final Ctx ctx = list_string_00010;
+        final Object o = ctx.q75;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_75th_00020() {
+        final Ctx ctx = list_string_00020;
+        final Object o = ctx.q75;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_75th_00050() {
+        final Ctx ctx = list_string_00050;
+        final Object o = ctx.q75;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_75th_00100() {
+        final Ctx ctx = list_string_00100;
+        final Object o = ctx.q75;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_75th_01000() {
+        final Ctx ctx = list_string_01000;
+        final Object o = ctx.q75;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean arraylist_string_75th_10000() {
+        final Ctx ctx = list_string_10000;
+        final Object o = ctx.q75;
+        return ctx.c.contains(o);
+    }
+
     // :set-false:
 
     @Benchmark
@@ -553,7 +918,176 @@ public class SetListContains {
         return ctx.c.contains(o);
     }
 
+    // :set-string-false:
+
+    @Benchmark
+    public boolean set_string_00000() {
+        final Ctx ctx = set_string_00000;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00001() {
+        final Ctx ctx = set_string_00001;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00002() {
+        final Ctx ctx = set_string_00002;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00003() {
+        final Ctx ctx = set_string_00003;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00004() {
+        final Ctx ctx = set_string_00004;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00005() {
+        final Ctx ctx = set_string_00005;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00010() {
+        final Ctx ctx = set_string_00010;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00020() {
+        final Ctx ctx = set_string_00020;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00050() {
+        final Ctx ctx = set_string_00050;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_00100() {
+        final Ctx ctx = set_string_00100;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_01000() {
+        final Ctx ctx = set_string_01000;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_10000() {
+        final Ctx ctx = set_string_10000;
+        final Object o = ctx.notContained;
+        return ctx.c.contains(o);
+    }
+
+    // :set-string-true:
+
+    @Benchmark
+    public boolean set_string_true_00001() {
+        final Ctx ctx = set_string_00001;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_00002() {
+        final Ctx ctx = set_string_00002;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_00003() {
+        final Ctx ctx = set_string_00003;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_00004() {
+        final Ctx ctx = set_string_00004;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_00005() {
+        final Ctx ctx = set_string_00005;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_00010() {
+        final Ctx ctx = set_string_00010;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_00020() {
+        final Ctx ctx = set_string_00020;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_00050() {
+        final Ctx ctx = set_string_00050;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_00100() {
+        final Ctx ctx = set_string_00100;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_01000() {
+        final Ctx ctx = set_string_01000;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
+    @Benchmark
+    public boolean set_string_true_10000() {
+        final Ctx ctx = set_string_10000;
+        final Object o = ctx.contained;
+        return ctx.c.contains(o);
+    }
+
     // :end:
+
+    private static String stringFactory() {
+        return new Object().toString();
+    }
 
     private static final class Ctx {
         public final Collection<Object> c;
