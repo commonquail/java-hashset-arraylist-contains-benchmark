@@ -1,0 +1,16 @@
+datafile = ARG1
+
+set key top right inside maxrows 5
+set title "speed of contains()" font "Sans,11"
+set ylabel "ops/s" font "Sans,11"
+set xlabel "elements" font "Sans,11"
+set xrange [0:ARG2]
+set yrange [0:*]
+
+set terminal png truecolor font "Sans,9" size 768,480
+set output ARG3
+
+# Generic multi-dataset plotting: https://stackoverflow.com/a/43819870/482758
+plot for [i=0:*] datafile index i \
+using 1:"score":"error" with errorlines \
+title columnheader(1)
