@@ -2,7 +2,7 @@ awk_script=extract-full-dataset.awk
 plotscript=plot.gpi
 gnuplot=gnuplot --persist -c $(plotscript)
 
-benchmark_output=$(DESTDIR)benchmark-output.txt
+benchmark_output=$(DESTDIR)benchmark-output.csv
 dataset=$(addsuffix .dat,full no-string no-object)
 filter_out=no-string no-object
 full_plot_elements=5 10 100 1200 10000
@@ -36,14 +36,14 @@ $(DESTDIR)no-%.png: no-%.dat $(plotscript)
 	$(gnuplot) $< 10 $@
 
 full.dat: $(benchmark_output) $(awk_script)
-	awk -f $(awk_script) $< > $@
+	awk -F, -f $(awk_script) $< > $@
 
 no-%.dat: full.dat
 	sed '/$*/,/^$$/d' $< > $@
 
 $(benchmark_output): target/benchmarks.jar
 	test -d $(DESTDIR) || mkdir $(DESTDIR)
-	java -jar $< > $@
+	java -jar $< -rf csv -rff $@
 
 target/benchmarks.jar: src/main/java/org/sample/SetListContains.java
 	mvn package
