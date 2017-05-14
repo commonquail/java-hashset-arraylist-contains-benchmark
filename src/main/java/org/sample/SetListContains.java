@@ -23,31 +23,31 @@ import java.util.stream.Stream;
 @State(Scope.Thread)
 public class SetListContains {
 
-    private final Ctx list_00000 = new Ctx(ArrayList::new, Object::new, 0);
-    private final Ctx list_00001 = new Ctx(ArrayList::new, Object::new, 1);
-    private final Ctx list_00002 = new Ctx(ArrayList::new, Object::new, 2);
-    private final Ctx list_00003 = new Ctx(ArrayList::new, Object::new, 3);
-    private final Ctx list_00004 = new Ctx(ArrayList::new, Object::new, 4);
-    private final Ctx list_00005 = new Ctx(ArrayList::new, Object::new, 5);
-    private final Ctx list_00010 = new Ctx(ArrayList::new, Object::new, 10);
-    private final Ctx list_00020 = new Ctx(ArrayList::new, Object::new, 20);
-    private final Ctx list_00050 = new Ctx(ArrayList::new, Object::new, 50);
-    private final Ctx list_00100 = new Ctx(ArrayList::new, Object::new, 100);
-    private final Ctx list_01000 = new Ctx(ArrayList::new, Object::new, 1000);
-    private final Ctx list_10000 = new Ctx(ArrayList::new, Object::new, 10000);
+    private Ctx list_00000 = new Ctx(ArrayList::new, Object::new, 0);
+    private Ctx list_00001 = new Ctx(ArrayList::new, Object::new, 1);
+    private Ctx list_00002 = new Ctx(ArrayList::new, Object::new, 2);
+    private Ctx list_00003 = new Ctx(ArrayList::new, Object::new, 3);
+    private Ctx list_00004 = new Ctx(ArrayList::new, Object::new, 4);
+    private Ctx list_00005 = new Ctx(ArrayList::new, Object::new, 5);
+    private Ctx list_00010 = new Ctx(ArrayList::new, Object::new, 10);
+    private Ctx list_00020 = new Ctx(ArrayList::new, Object::new, 20);
+    private Ctx list_00050 = new Ctx(ArrayList::new, Object::new, 50);
+    private Ctx list_00100 = new Ctx(ArrayList::new, Object::new, 100);
+    private Ctx list_01000 = new Ctx(ArrayList::new, Object::new, 1000);
+    private Ctx list_10000 = new Ctx(ArrayList::new, Object::new, 10000);
 
-    private final Ctx set_00000 = new Ctx(HashSet::new, Object::new, 0);
-    private final Ctx set_00001 = new Ctx(HashSet::new, Object::new, 1);
-    private final Ctx set_00002 = new Ctx(HashSet::new, Object::new, 2);
-    private final Ctx set_00003 = new Ctx(HashSet::new, Object::new, 3);
-    private final Ctx set_00004 = new Ctx(HashSet::new, Object::new, 4);
-    private final Ctx set_00005 = new Ctx(HashSet::new, Object::new, 5);
-    private final Ctx set_00010 = new Ctx(HashSet::new, Object::new, 10);
-    private final Ctx set_00020 = new Ctx(HashSet::new, Object::new, 20);
-    private final Ctx set_00050 = new Ctx(HashSet::new, Object::new, 50);
-    private final Ctx set_00100 = new Ctx(HashSet::new, Object::new, 100);
-    private final Ctx set_01000 = new Ctx(HashSet::new, Object::new, 1000);
-    private final Ctx set_10000 = new Ctx(HashSet::new, Object::new, 10000);
+    private Ctx set_00000 = new Ctx(HashSet::new, Object::new, 0);
+    private Ctx set_00001 = new Ctx(HashSet::new, Object::new, 1);
+    private Ctx set_00002 = new Ctx(HashSet::new, Object::new, 2);
+    private Ctx set_00003 = new Ctx(HashSet::new, Object::new, 3);
+    private Ctx set_00004 = new Ctx(HashSet::new, Object::new, 4);
+    private Ctx set_00005 = new Ctx(HashSet::new, Object::new, 5);
+    private Ctx set_00010 = new Ctx(HashSet::new, Object::new, 10);
+    private Ctx set_00020 = new Ctx(HashSet::new, Object::new, 20);
+    private Ctx set_00050 = new Ctx(HashSet::new, Object::new, 50);
+    private Ctx set_00100 = new Ctx(HashSet::new, Object::new, 100);
+    private Ctx set_01000 = new Ctx(HashSet::new, Object::new, 1000);
+    private Ctx set_10000 = new Ctx(HashSet::new, Object::new, 10000);
 
     // :list-false:
 
