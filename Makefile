@@ -20,6 +20,10 @@ plot: $(plots)
 .PHONY: run-benchmark
 run-benchmark: $(benchmark_output)
 
+.PHONY: count-unique-hashcodes
+count-unique-hashcodes: HashCodeCollision.class
+	java HashCodeCollision | sort -u | wc -l
+
 .PHONY: clean
 clean:
 	$(RM) $(DESTDIR)*.png $(dataset) *.class
