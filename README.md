@@ -5,6 +5,23 @@ for a while. I recently came across an `ArrayList` used to express the
 semantics of set containment, wondered if that could ever be a good tradeoff,
 and decided to use that as a case study.
 
+## Conclusion
+
+The outcome is wonderfully unsurprising:
+
+* Use `HashSet`; `HashSet::contains` is quite fast, wherefore `get` is quite
+  fast.
+* `HashSet` outperforms `ArrayList` already at 4 elements.
+* `HashSet<String>` and `HashSet<Object>` are neck-and-neck, the former
+  slightly outperforming the latter.
+* For `HashSet<String>`, finding nothing is 20% to 25% faster than finding
+  something.
+* If the collection has only a single element, `ArrayList` greatly outperforms
+  `HashSet`. If you care about only a specific element at a known position,
+  direct access is unbeatable. However, in this case, if not constrained by the
+  API, eliminating the collection wrapper altogether will be better in every
+  way.
+
 ## Premise
 
 `contains` is a rarely useful operation, often better replaced by `get` and a
@@ -36,21 +53,6 @@ performs on average only <sup>*n*</sup>/<sub>2</sub> comparisons instead of
 unpredictable input. `ArrayList` will match or outperform `HashSet` for very
 small *n* but the boundary between *small* and *large* is so negligible that
 expressing behavioural semantics trumps performance considerations.
-
-## Conclusion
-
-* Use `HashSet`; `HashSet::contains` is quite fast, wherefore `get` is quite
-  fast.
-* `HashSet` outperforms `ArrayList` already at 4 elements.
-* `HashSet<String>` and `HashSet<Object>` are neck-and-neck, the former
-  slightly outperforming the latter.
-* For `HashSet<String>`, finding nothing is 20% to 25% faster than finding
-  something.
-* If the collection has only a single element, `ArrayList` greatly outperforms
-  `HashSet`. If you care about only a specific element at a known position,
-  direct access is unbeatable. However, in this case, if not constrained by the
-  API, eliminating the collection wrapper altogether will be better in every
-  way.
 
 ## Benchmark
 
